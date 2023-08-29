@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+/* flatuicolors - For colors 
+   google material icons
+*/
+.page-actions-cont {
+  height: 3rem;
+  background-color: #218c74;
+  display: flex;
+  align-items: flex-end;
+}
+.page-action {
+  margin: 0.5rem;
+  color: #f1f2f6;
+}
+.cellprop-actions-cont {
+  height: 3rem;
+  background-color: lightsalmon;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+.cellprop-actions-cont > * {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.cellprop-actions-cont > select {
+  border: none;
+  border-radius: 2px;
+  text-transform: capitalize;
+}
+
+.font-family-prop{
+  padding: .2rem;
+}
+.font-size-prop {
+  padding: 0.2rem;
+}
+.formula-actions-cont {
+  height: 3rem;
+  background-color: lightblue;
+}
+.sheet-actions-cont {
+  height: 3rem;
+  background-color: lightcoral;
+}
+.grid-cont {
+  height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+}
+
+.sheets-folder-cont {
+  height: 1rem;
+  background-color: yellow;
+  display: inline-block;
+  width: 5rem;
+}
