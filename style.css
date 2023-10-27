@@ -46,10 +46,32 @@ body {
   padding: 0.2rem;
 }
 .formula-actions-cont {
-  height: 3rem;
-  background-color: lightblue;
-  
+  height: 2rem;
+  background-color: #ecf0f1;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
 }
+.formula-actions-cont > *{
+   display: inline-block;
+   margin: 0.7rem;
+}
+.formula-actions-cont > input{
+    border: none;
+    outline: none;
+    height: 70%;
+}
+.formula-icon{
+  width: 1.2rem;
+}
+.address-bar{
+  width: 5rem;
+  text-align: center;
+}
+.formula-bar{
+  width: calc(100vw - 5rem - 0.7rem - 0.7rem - 0.7rem);
+}
+
 .sheet-actions-cont {
   height: 3rem;
   background-color: #ecf0f1;
@@ -80,7 +102,74 @@ body {
   text-decoration-thickness: 3px;
   text-transform: capitalize;
   font-size: 0.9rem;
+  margin-left: 0.8rem;
 }
+/* ****************************************Grid Cells Styling Starts here************************************ */
 .grid-cont {
-  height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+  height: calc(100vh - 3rem - 3rem - 2rem - 3rem);
+  position: relative;
+  overflow: scroll;
+  background-color: #ecf0f1;
 }
+.top-left-dummy-box{
+  height: 2rem;
+  width: 2rem;
+  background-color: #747d8c;
+  position: fixed;
+  z-index: 5;
+}
+.address-col-cont{
+  position: sticky;
+  top: 2rem;
+  left: 0;
+  /* background-color: lightblue; */
+}
+.address-row-cont{
+  /* height: 2rem; */
+  /* border: 2px solid black; */
+  display: flex;
+  /* background-color: beige; */
+  /* background-color: lightpink; */
+}
+.cells-cont{
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  /* background-color: lightgreen; */
+}
+
+/* Styling Dynamically Generated Address Columns */
+.address-col{
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid #dfe4ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .address-row{
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #dfe4ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cell{
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #dfe4ea;
+    outline: none;
+  }
+  .row-cont{
+    display: flex;
+  }
+
+/* ****************************************Grid Cells Styling Ends here************************************ */
+
+
+
+
+
+
