@@ -6,6 +6,7 @@ let addressRowCont = document.querySelector(".address-row-cont");
 let cellsCont = document.querySelector(".cells-cont");
 let addressBar = document.querySelector(".address-bar");
 
+//*************Grid Creation starts ****************************************************/
 for (let i = 0; i < rows; i++) {
     let addressCol = document.createElement('div')
     addressCol.innerText = i + 1;
@@ -23,7 +24,7 @@ for (let i = 0; i < cols; i++) {
 
 
 for (let i = 0; i < rows; i++) {
-
+    
     let rowCont = document.createElement("div");
     rowCont.classList.add("row-cont")
     for (let j = 0; j < cols; j++) {
@@ -36,7 +37,9 @@ for (let i = 0; i < rows; i++) {
     cellsCont.appendChild(rowCont)
 }
 
-//*************Cell Name Functionality starts */
+//*************Grid Creation ends ****************************************************/
+
+//*************Cell Name display in address bar Functionality starts ****************************************************/
 function addListenerForAddressBarDisplay(cell, i, j){
     cell.addEventListener("click", (e) => {
         let rowID = i + 1;
@@ -44,4 +47,12 @@ function addListenerForAddressBarDisplay(cell, i, j){
         addressBar.value = `${colID}${rowID}`
     })
 }
-//*************Cell Name Functionality ends */
+//*************Cell Name display in address bar Functionality ends *****************************************************/
+
+//************************Cell Formatting Bar Functionality started ****************************************/
+/** Properties
+ * 1. Modifying Cell Properties
+ * 2. Storing Property applied to individual Cells in a storage: As any cell can have any set of properties
+ * 3. Two Way Binding : Both storage and UI needs to be changed to keep cells and Formatting bar in Sync
+ */
+//************************Cell Formatting Bar Functionality ended ****************************************/
