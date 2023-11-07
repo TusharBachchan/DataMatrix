@@ -31,6 +31,10 @@ for (let i = 0; i < rows; i++) {
         let cell = document.createElement("div")
         cell.classList.add("cell");
         cell.setAttribute("contenteditable", "true")
+        cell.setAttribute("spellcheck", "false")
+        // Attributes to map sheet cells to sheetDB[][] cells : check cell-properties.js
+        cell.setAttribute("rid", i)
+        cell.setAttribute("cid", j)
         rowCont.appendChild(cell)
         addListenerForAddressBarDisplay(cell, i, j)
     }
@@ -49,10 +53,6 @@ function addListenerForAddressBarDisplay(cell, i, j){
 }
 //*************Cell Name display in address bar Functionality ends *****************************************************/
 
-//************************Cell Formatting Bar Functionality started ****************************************/
-/** Properties
- * 1. Modifying Cell Properties
- * 2. Storing Property applied to individual Cells in a storage: As any cell can have any set of properties
- * 3. Two Way Binding : Both storage and UI needs to be changed to keep cells and Formatting bar in Sync
- */
-//************************Cell Formatting Bar Functionality ended ****************************************/
+// By default the first cell should be selected when the user opens the applicaton, clicking it using DOM
+let firstCell = document.querySelector(".cell");
+firstCell.click()

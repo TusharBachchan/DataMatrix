@@ -171,6 +171,21 @@ body {
 
 /* ****************************************Grid Cells Styling Ends here************************************ */
 
+/* ****************************************Color text and cell styling Starts here************************************ */
+.color-prop{
+  position: relative;
+}
+.color-prop > input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* ****************************************Color text and cell styling Ends here************************************ */
+
 
 
 
