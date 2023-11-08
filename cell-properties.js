@@ -51,8 +51,9 @@ let leftAlign = alignment[0];
 let centerAlign = alignment[1];
 let rightAlign = alignment[2];
 
+
 // Attach Event Listners
-bold.addeventListener("click", (e) => {
+bold.addEventListener("click", (e) => {
     // On clicking on the bold icon the "Selected" cell should be affected.
     // Therefore first we need to identify the selected cell by the user.
     // Acess active cell -> Use Adress bar to decode rid, cid.
@@ -60,6 +61,31 @@ bold.addeventListener("click", (e) => {
     // rid and cid can be used to access the object in storageDB too.
     // Hence 2-way binding is achieved i.e changes are simultaneously made in UI and Data Layer.
     
+    let address = addressBar.value;
+    activeCell(address)
     
 });
+
+// returns cell node and object containing properties corresponding to that node in sheetDB
+function activeCell(address){ 
+    // address is the value in the address bar
+    // Next step is to decode that value to find cid and rid -> use function decodeRIDAndCID()
+    // cid and rid will help in locating both cell node and corresponding object in sheetDB
+    // As cid and rid are attributes of the cell and the corresponding object is stored at sheetDB[rid][cid]
+
+   
+
+    // Getting active cell node 
+    let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`);
+    let cellProp = sheetDB[rid][cid];
+    return [cell, cellProp];
+}
+// Using Address value in Address bar to get the value of rid and cid of selected/active cell
+function decodeRIDAndCID(address){
+    // eg. -> a value from address bar -> "A1"
+    // Start of decoding, rid is related to A and cid is related to 1
+    let rid = address.charCodeAt(0) - 65; // 65 - 65 = 0, first index = 0, since A corresponds to 0
+    let cid = Number(address.slice(1) - 1) // +"1" = 1, 1 - 1 = 0, since we are working with zero based indexing
+    return [rid, cid];
+}
 //************************Cell Formatting Bar Functionality ended ****************************************/
