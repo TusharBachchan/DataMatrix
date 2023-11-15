@@ -54,5 +54,5 @@ function addListenerForAddressBarDisplay(cell, i, j){
 //*************Cell Name display in address bar Functionality ends *****************************************************/
 
 // By default the first cell should be selected when the user opens the applicaton, clicking it using DOM
-let firstCell = document.querySelector(".cell");
-firstCell.click()
+// let firstCell = document.querySelector(".cell");
+// firstCell.click()
